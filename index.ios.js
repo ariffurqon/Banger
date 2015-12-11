@@ -1,7 +1,7 @@
 /**
- * Sample React Native App
- * https://github.com/facebook/react-native
+ * index.ios.js
  */
+ 
 'use strict';
 
 var React = require('react-native');
