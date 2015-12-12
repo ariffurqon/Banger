@@ -5,7 +5,9 @@
 'use strict';
 
 var React = require('react-native');
-var Main = require('./App/Components/Main');
+// var Main = require('./App/Components/Main');
+var Videos = require('./App/Components/Videos')
+
 
 var {
   AppRegistry,      // an ES6 thing called "destructuring."
@@ -22,7 +24,7 @@ class Banger extends React.Component{
         style = {styles.container}
         initialRoute = {{
             title: 'Banger',
-            component: Main
+            component: Videos
         }} />
     );
   }

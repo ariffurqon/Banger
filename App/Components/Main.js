@@ -10,12 +10,14 @@ var {
 	TextInput
 } = React;
 
+
+
 class Main extends React.Component{
 	render(){
 		return(
 			<View style={styles.mainContainer}>
 				<View style={styles.header}>
-				    <Image style={styles.mark} source={{uri: 'http://i.imgur.com/x1Hp9O8.png'}} />
+				    <Image style={styles.mark} source={{uri: 'http://i.imgur.com/obc2KS4.png'}} />
 				</View>
 				<View style={styles.inputs}>
 	                <View style={styles.inputContainer}>
@@ -42,7 +44,7 @@ class Main extends React.Component{
 	                </View>
 				</View>
 				<View style={styles.signin}>
-	               <Text style={styles.whiteFont}>Sign In</Text>
+	               <Text style={styles.whiteFont}>Log In</Text>
 	            </View>
 				<View style={styles.signup}>
 				                <Text style={styles.greyFont}>Don`t have an account?<Text style={styles.whiteFont}>  Sign Up</Text></Text>
@@ -64,7 +66,7 @@ var styles = StyleSheet.create({
         top: 0,
         width: windowSize.width,
         height: windowSize.height,
-		backgroundColor: '#FF3366'
+		backgroundColor: 'FFF'
 	},
 	title: {
 		marginBottom: 20,
@@ -73,8 +75,8 @@ var styles = StyleSheet.create({
 		color: '#ffff'
 	},
 	mark: {
-	        width: 80,
-	        height: 80
+	        width: 120,
+	        height: 120
 	    },
     header: {
             justifyContent: 'center',
