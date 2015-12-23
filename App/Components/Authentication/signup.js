@@ -75,7 +75,7 @@ module.exports = React.createClass({
       user.set('password', this.state.password);
 
       user.signUp(null, {
-        success: (user) => { this.props.navigator.immediatelyResetRouteStack([{name: 'tweets'}]); },
+        success: (user) => { this.props.navigator.immediatelyResetRouteStack([{name: 'videos'}]); },
         error: (user, error) => { this.setState({errorMessage: error.message}); }
       });
   },
