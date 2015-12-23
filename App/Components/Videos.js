@@ -17,10 +17,6 @@ var {
 
 const People = [
   'black',
-  'green',
-  'blue',
-  'purple',
-  'orange',
 ]
 
 var SWIPE_THRESHOLD = 120;
@@ -131,7 +127,7 @@ class Videos extends Component {
         </Animated.View>
 
         <Animated.View style={[styles.yup, animatedYupStyles]}>
-          <Text style={styles.yupText}>Yup!!</Text>
+          <Text style={styles.yupText}>Yup!!!</Text>
         </Animated.View>
       </View>
     );
@@ -151,7 +147,7 @@ var styles = StyleSheet.create({
     // backgroundColor: 'red',
   },
   yup: {
-    borderColor: 'white',
+    borderColor: 'black',
     borderWidth: 2,
     position: 'absolute',
     padding: 20,

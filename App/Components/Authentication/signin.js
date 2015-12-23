@@ -1,20 +1,26 @@
 var React = require('react-native');
 var Dimensions = require('Dimensions');
 var windowSize = Dimensions.get('window');
+var Button = require('../Common/button');
 
 var {
-	StyleSheet,
-	Text,
 	View,
-	Image,
-	TextInput
+	Text,
+	StyleSheet,
+	TextInput,
+	Image
 } = React;
 
 
-
-class Main extends React.Component{
-	render(){
-		return(
+module.exports = React.createClass({
+	getInitialState: function(){
+		return {
+			username: '',
+				password: ''
+		};
+	},
+	render: function(){
+		return (
 			<View style={styles.mainContainer}>
 				<View style={styles.header}>
 				    <Image style={styles.mark} source={{uri: 'http://i.imgur.com/obc2KS4.png'}} />
@@ -26,8 +32,8 @@ class Main extends React.Component{
 	                        style={[styles.input, styles.whiteFont]}
 	                        placeholder="Username"
 	                        placeholderTextColor="#FFF"
-	                        // value={this.state.username}
-	                    />
+	                        value={this.state.username}
+	                        onChangeText={ (text) => this.setState({username: text})} />
 	                </View>
 	                <View style={styles.inputContainer}>
 	                    <Image style={styles.inputPassword} source={{uri: 'http://i.imgur.com/CmWEUsT.png'}}/>
@@ -36,23 +42,30 @@ class Main extends React.Component{
 	                        style={[styles.input, styles.whiteFont]}
 	                        placeholder="Pasword"
 	                        placeholderTextColor="#FFF"
-	                        // value={this.state.password}
-	                    />
+	                        value={this.state.password}
+	                        onChangeText={ (text) => this.setState({password: text})} />
 	                </View>
+
 	                <View style={styles.forgotContainer}>
 	                    <Text style={styles.whiteFont}>Forgot Password</Text>
 	                </View>
+
 				</View>
 				<View style={styles.signin}>
-	               <Text style={styles.whiteFont}>Log In</Text>
+	               <Button text={'Sign in'} onPress={this.onPress} />
 	            </View>
 				<View style={styles.signup}>
-				                <Text style={styles.greyFont}>Don`t have an account?<Text style={styles.whiteFont}>  Sign Up</Text></Text>
+				    <Text style={styles.greyFont}>Don`t have an account?<Text style={styles.whiteFont}>  Sign Up</Text></Text>
 				</View>
 			</View>
 		)
+	},
+	onPress: function(){
+		this.setState({
+			password: ''
+		});
 	}
-};
+});
 
 var styles = StyleSheet.create({
 	mainContainer: {
@@ -66,7 +79,7 @@ var styles = StyleSheet.create({
         top: 0,
         width: windowSize.width,
         height: windowSize.height,
-		backgroundColor: 'FFF'
+		backgroundColor: '#FF3366'
 	},
 	title: {
 		marginBottom: 20,
@@ -83,11 +96,6 @@ var styles = StyleSheet.create({
             alignItems: 'center',
             flex: .5,
             backgroundColor: 'transparent'
-        },
-    signin: {
-        backgroundColor: '#000',
-        padding: 20,
-        alignItems: 'center'
     },
     signup: {
       justifyContent: 'center',
@@ -132,6 +140,3 @@ var styles = StyleSheet.create({
       color: '#FFF'
     }
 });
-
-module.exports = Main;
-
