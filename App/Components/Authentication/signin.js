@@ -86,10 +86,10 @@ var styles = StyleSheet.create({
 		flexDirection: 'column',
 		justifyContent: 'center',
 		position: 'absolute',
-        left: 0,
-        top: 0,
-        width: windowSize.width,
-        height: windowSize.height,
+    left: 0,
+    top: 0,
+    width: windowSize.width,
+    height: windowSize.height,
 		backgroundColor: '#FF3366'
 	},
 	mark: {
