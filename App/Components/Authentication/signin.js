@@ -1,6 +1,7 @@
 var React = require('react-native');
 var Dimensions = require('Dimensions');
 var windowSize = Dimensions.get('window');
+var Parse = require('parse/react-native');
 var Button = require('../Common/button');
 
 var {
@@ -16,7 +17,7 @@ module.exports = React.createClass({
 	getInitialState: function(){
 		return {
 			username: '',
-				password: ''
+			password: ''
 		};
 	},
 	render: function(){
@@ -61,9 +62,10 @@ module.exports = React.createClass({
 		)
 	},
 	onPress: function(){
-		this.setState({
-			password: ''
-		});
+		Parse.User.logIn(this.state.username, this.state.password, {
+			success: (user) => {console.log(user);},
+			error: (data, error) => {console.log(data, error); }
+		})
 	}
 });
 
