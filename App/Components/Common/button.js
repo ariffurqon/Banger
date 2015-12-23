@@ -1,5 +1,6 @@
 var React = require('react-native');
 
+
 var {
 	Text,
 	StyleSheet,
@@ -23,17 +24,13 @@ var styles = StyleSheet.create({
   button: {
     justifyContent: 'center',
     alignItems: 'center',
-    borderWidth: 1,
-    borderRadius: 5,
-    padding: 5,
     marginTop: 10,
-    backgroundColor: 'white',
-    padding: 20,
-    alignItems: 'center'
+    marginBottom: 5,
+    flex: .25
   },
   buttonText: {
     flex: 1,
     alignSelf: 'center',
-    fontSize: 20
+    fontSize: 15
   }
 });
