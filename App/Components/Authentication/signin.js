@@ -17,7 +17,8 @@ module.exports = React.createClass({
 	getInitialState: function(){
 		return {
 			username: '',
-			password: ''
+			password: '',
+			errorMessage: ''
 		};
 	},
 	render: function(){
@@ -53,6 +54,7 @@ module.exports = React.createClass({
 
 				</View>
 				<View style={styles.signin}>
+					<Text>{this.state.errorMessage}</Text>
 	               <Button text={'Sign in'} onPress={this.onPress} />
 	            </View>
 				<View style={styles.signup}>
@@ -64,7 +66,7 @@ module.exports = React.createClass({
 	onPress: function(){
 		Parse.User.logIn(this.state.username, this.state.password, {
 			success: (user) => {console.log(user);},
-			error: (data, error) => {console.log(data, error); }
+			error: (data, error) => {this.setState({errorMessage: error.message}); }
 		})
 	}
 });
