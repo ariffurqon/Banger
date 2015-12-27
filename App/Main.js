@@ -19,11 +19,11 @@ module.exports = React.createClass({
   componentWillMount: function(){
       Parse.initialize("j8AibL4NM07erjAhMAWiJ8XpYVuzH7xgccH2k5PT", "IQNXeW4F16VtxlN776ybwTVyna0N4Y6VFAF4Fbfd");
   },
-  renderScene: function(route, navigator) {
+  renderScene(route, navigator) {
       var Component = ROUTES[route.name]; 
       return <Component route={route} navigator={navigator} />;
   },
-  render: function() {
+  render() {
     return (
       <Navigator
               style={styles.container}

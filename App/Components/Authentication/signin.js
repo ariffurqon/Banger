@@ -73,7 +73,7 @@ module.exports = React.createClass({
 	onPress: function(){
 		Parse.User.logIn(this.state.username, this.state.password, {
               success: (user) => { this.props.navigator.immediatelyResetRouteStack([{name: 'videos'}]); },
-              error: (data, error) => { this.setState({ errorMessage: error.message }); }
+              error: (data, error) => { this.setState({ errorMessage: 'invalid password, please try again'}); }
         });
 	}
 });
@@ -92,6 +92,12 @@ var styles = StyleSheet.create({
     height: windowSize.height,
 		backgroundColor: '#FF3366'
 	},
+  title: {
+      marginBottom: 20,
+      fontSize: 25,
+      textAlign: 'center',
+      color: '#fff'
+  },
 	mark: {
     width: 120,
     height: 120

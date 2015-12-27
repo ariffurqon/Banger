@@ -16,7 +16,7 @@ var {
 
 
 const People = [
-  'black',
+  'white',
 ]
 
 var SWIPE_THRESHOLD = 120;
@@ -137,6 +137,7 @@ class Videos extends Component {
 var styles = StyleSheet.create({
   container: {
     flex: 1,
+    marginTop: 65,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#FF3366',
